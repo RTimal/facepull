@@ -26,8 +26,6 @@ var facepull =
 
 				// listen for and handle auth.statusChange events
 				FB.Event.subscribe('auth.statusChange', function(response) {
-				
-				
 				  if (response.authResponse) {
 					// user has auth'd your app and is logged into Facebook
 					FB.api('/me', function(me){
@@ -37,9 +35,6 @@ var facepull =
 					})
 					document.getElementById('auth-loggedout').style.display = 'none';
 					document.getElementById('auth-loggedin').style.display = 'block';
-					
-							var access_token = response.authResponse.access_token;
-							alert(access_token);
 
 				  } else {
 					// user has not auth'd your app, or is not logged into Facebook
@@ -60,20 +55,38 @@ var facepull =
 			  } 
 			},
 			
-		fbconnect:function()
+		fbCheckLogin:function()
 			{
-			
+				FB.getLoginStatus(function(response) 
+				{
+					  if (response.status === 'connected') {
+						// the user is logged in and has authenticated your
+						// app, and response.authResponse supplies
+						// the user's ID, a valid access token, a signed
+						// request, and the time the access token 
+						// and signed request each expire
+						var uid = response.authResponse.userID;
+						var accessToken = response.authResponse.accessToken;
+						alert(accessToken);
+					  } else if (response.status === 'not_authorized') {
+							alert("could not get access token, user is logged in but has no authenticated your app");
+					  } else {
+							alert("user isn't logged in");
+					  }
+			 });
 			},
 			
 		bindbuttons:function()
 			{
 				
 			},
+		
 			
 		run:function()
 			{
 				this._initfb();
 				this.bindbuttons();
+				this.fbCheckLogin();
 			},
 
 		fbpullfriends:function()
