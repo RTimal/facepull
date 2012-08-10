@@ -38,7 +38,6 @@ var facepull =
 					document.getElementById('auth-loggedout').style.display = 'none';
 					document.getElementById('auth-loggedin').style.display = 'block';
 					
-					getNewAccessToken();
 
 				  } else {
 					// user has not auth'd your app, or is not logged into Facebook
