@@ -217,7 +217,7 @@ var facepull =
 			$.getJSON($url,function(data)
 						{
 							alert(data["picture"]);
-							$picurl=data["picture"];
+							picurl=data["picture"];
 						});
 						
 			$photo.html('<img src="'+picurl+'"');
