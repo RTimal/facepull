@@ -108,8 +108,9 @@ var facepull =
 				
 			},
 		getFriends:function () 
-			{
-								window.FB.api('/me/friends', function(response) {
+			{	
+				$('#thumbs').empty();
+				window.FB.api('/me/friends', function(response) {
 				if(response.data) 
 				{
 					$.each(response.data,function(index,friend) {
