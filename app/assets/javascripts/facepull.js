@@ -113,13 +113,13 @@ var facepull =
 				img.src = url;
 				var canvas1 = document.getElementById("canvas");
 				var imageElement = document.getElementById("mypic");
-				imageElement.src=myImageSrc;
 					
 				var canvas2 = document.getElementById("canvas2");
 				var ctx2=canvas2.getContext('2d');
 				ctx2.drawImage(canvas1, 0, 0);
 				var myImageSrc = canvas2.toDataURL("image/png");
 				alert(myImageSrc);
+				imageElement.src=myImageSrc;
 		
 			},
 				
