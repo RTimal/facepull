@@ -166,18 +166,18 @@ var facepull =
 		
 		$('#detectface').bind('click',function()
 			{
-		
-				$(function() {
-				
-					var coords = $('img').faceDetection({
+				$(function()
+				{
+						var coords = $('#largephoto').faceDetection({
 						complete:function() {
-							$this.text('Done!');
+							//after complete
 						},
 						error:function(img, code, message) {
-							$this.text('error!');
+							
 							alert('Error: '+message);
 						}
 					});
+					
 					for (var i = 0; i < coords.length; i++) {
 						$('<div>', {
 							'class':'face',
@@ -189,30 +189,15 @@ var facepull =
 								'height': 	coords[i].height	+'px'
 							}
 						})
-						.appendTo('#content');
+						.appendTo('#photo');
 					}
-				
 				return false;
-			});
+				});
 						
 						
-					});
-
-
-
-
-
-
-
-
-
-
-
-
-
-			
 			});
-		
+
+
 		$('#save').bind('click',function()
 			{
 			
