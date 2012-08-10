@@ -212,7 +212,7 @@ var facepull =
 			$('#saveface').hide();
 			var id=$(this).attr('data-id');
 			$('#photo').empty();
-			$photo= $('#photo');
+			$photo=$('#photo');
 			$photo.hide();
 			$photo.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
 			$('#detectface').show();
