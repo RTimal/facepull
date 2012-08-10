@@ -155,10 +155,26 @@ var facepull =
 	}
 	$(document).ready(function(){
 		facepull.run();
+		
+		
+		$('#detectface').hide();
+		$('#saveface').hide();
 		$('#refresh').bind('click',function(){
 			//facepull.getNewAccessToken();
 			facepull.getFriends();
 		});
+		
+		$('#detectface').bind('click',function()
+			{
+					var coords = $('#photo').faceDetection();
+					console.log(coords);    
+			});
+		
+		$('#save').bind('click',function()
+			{
+			
+				
+			});
 		
 		$('#gallery').delegate('#thumbnail','click',function(){
 			//get thumbnail id
@@ -169,10 +185,14 @@ var facepull =
 			$newPhoto.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
 			$('#photo').append($newPhoto);
 			$newPhoto.fadeIn();
+			$('#detectface').show();
+			$('#saveface').show();
 			//put id into link
 			//show link in #photo, hide,
 			//fadein
 		});
 	
-	
+
+		
+		
 	});

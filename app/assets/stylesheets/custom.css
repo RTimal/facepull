@@ -40,6 +40,10 @@ background-color:red;
 color:white;
 }
 
+.leftfloatbutton:hover{
+cursor:pointer;
+}
+
 #currentphoto{
 position:relative;
 width:20%;
