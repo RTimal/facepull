@@ -210,20 +210,15 @@ var facepull =
 			//get thumbnail id
 			var id=$(this).attr('data-id');
 		
-			url='http://graph.facebook.com/'+id+'/?fields=picture&type=large';
-			var picurl="";
+			url='http://graph.facebook.com/'+id+'/picture?type=large';
 			
-			$.getJSON(url,function(data)
-						{
 							$('#photo').empty();
 							$photo= $('#photo');
 							$photo.hide();
-							alert(data["picture"]);
-							var picurl=data["picture"];
-							alert(picurl);
-							$photo.html('<img src ="'+picurl+'"></img>');
+							
+							$photo.html('<img src ="'+url+'"></img>');
 							$photo.fadeIn();
-						});
+						
 						
 			$('#detectface').show();
 			$('#saveface').show();
