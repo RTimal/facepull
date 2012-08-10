@@ -115,6 +115,7 @@ var facepull =
 				var myImageSrc = canvas1.toDataUrl("image/png");
 				var imageElement = document.getElementById("mypic");
 				imageElement.src=myImageSrc;
+		
 			},
 				
 				
