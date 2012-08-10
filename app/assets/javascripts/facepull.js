@@ -221,10 +221,10 @@ var facepull =
 						{
 							alert(data["picture"]);
 							picurl=data["picture"];
+							$photo.html('<img src="'+picurl+'"');
+							$photo.fadeIn();
 						});
 						
-			$photo.html('<img src="'+picurl+'"');
-			$photo.fadeIn();
 			$('#detectface').show();
 			$('#saveface').show();
 			//put id into link
