@@ -42,7 +42,6 @@ color:white;
 
 #currentphoto{
 position:relative;
-height:50%;
 width:20%;
 float:left;
 border:1px solid red;
@@ -64,8 +63,6 @@ padding-top:10px;
 }
 
 #photo{
-width:75%;
-height:70%;
 border-bottom:1px solid red;
 }
 
