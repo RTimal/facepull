@@ -1,7 +1,8 @@
 var facepull = 
 	{
-		currentletter:"a",
-		currentsex:"M",
+		currentLetter:"a",
+		currentSex:"M",
+		access_token:"",
 		_initfb:function()
 			{
 			 // Load the SDK Asynchronously
@@ -25,6 +26,8 @@ var facepull =
 
 				// listen for and handle auth.statusChange events
 				FB.Event.subscribe('auth.statusChange', function(response) {
+				
+				
 				  if (response.authResponse) {
 					// user has auth'd your app and is logged into Facebook
 					FB.api('/me', function(me){
@@ -34,6 +37,15 @@ var facepull =
 					})
 					document.getElementById('auth-loggedout').style.display = 'none';
 					document.getElementById('auth-loggedin').style.display = 'block';
+					if (response.session) 
+						{
+							var access_token = response.session.access_token;
+							alert(access_token);
+						} else 
+						{
+							alert('User is logged out');
+						}
+
 				  } else {
 					// user has not auth'd your app, or is not logged into Facebook
 					document.getElementById('auth-loggedout').style.display = 'block';
@@ -45,15 +57,6 @@ var facepull =
 				document.getElementById('auth-loginlink').addEventListener('click', function(){
 				  FB.login(function (response) 
 						{
-								if (response.session) 
-								{
-									var access_token = response.session.access_token;
-									alert(access_token);
-								} else 
-								
-								{
-									alert('User is logged out');
-								}
 					    });
 				});
 				document.getElementById('auth-logoutlink').addEventListener('click', function(){
