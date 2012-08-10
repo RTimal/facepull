@@ -1,11 +1,12 @@
 class SiteController < ApplicationController
   def gallery
-	@message = "heyhey";
+	
   end
 
   def login
   end
 
   def index
+	 @login="Login now with facebook"
   end
 end
