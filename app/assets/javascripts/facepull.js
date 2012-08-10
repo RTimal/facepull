@@ -159,7 +159,7 @@ var facepull =
 			facepull.getFriends();
 		});
 		
-		$('#gallery').click('#thumbnail','hover',function(){
+		$('#gallery').delegate('#thumbnail','click',function(){
 			//get thumbnail id
 			var id=$(this).attr('data-id');
 			$('#photo').empty();
