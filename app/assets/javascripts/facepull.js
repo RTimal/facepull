@@ -168,7 +168,7 @@ var facepull =
 			{
 				$(function()
 				{
-						var coords = $('#newphoto img').faceDetection({
+						var coords = $('img').faceDetection({
 						complete:function() {
 							//after complete
 						},
