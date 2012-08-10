@@ -103,17 +103,18 @@ var facepull =
 					});
 			},
 			drawImage:function(url){
-						  var ctx = document.getElementById('canvas').getContext('2d');
-						  ctx.clearRect(0, 0, canvas.width, canvas.height);
-						  var img = new Image();
-						  img.onload = function(){
-							ctx.drawImage(img,0,0);
-						  };
-						  img.src = url;
-						  var image = new Image();
-						  image.src = ctx.toDataURL("image/png");
-						  $('#photo').empty();
-						  $('#photo').html(image);
+				var ctx = document.getElementById('canvas').getContext('2d');
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				var img = new Image();
+				img.onload = function()
+				{
+					ctx.drawImage(img,0,0);
+				};
+				img.src = url;
+				var canvas1 = document.getElementById("canvas");
+				var myImageSrc = canvas1.toDataUrl("image/png");
+				var imageElement = document.getElementById("mypic");
+				imageElement.src=myImageSrc;
 			},
 				
 				
@@ -182,7 +183,7 @@ var facepull =
 			{
 				$(function()
 				{
-						var coords = $('#canvas').faceDetection({
+						var coords = $('#mypic').faceDetection({
 						complete:function() {
 							//after complete
 							alert("done");
@@ -205,7 +206,7 @@ var facepull =
 								'height': 	coords[i].height	+'px'
 							}
 						})
-						.appendTo('#canvas');
+						.appendTo('#photo');
 					}
 				return false;
 				});
