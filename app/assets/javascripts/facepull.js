@@ -102,7 +102,24 @@ var facepull =
 						  }
 					});
 			},
-			
+			drawImage:function(url){
+						function draw() {
+						  var ctx = document.getElementById('canvas').getContext('2d');
+						  var img = new Image();
+						  img.onload = function(){
+							ctx.drawImage(img,0,0);
+							ctx.beginPath();
+							ctx.moveTo(30,96);
+							ctx.lineTo(70,66);
+							ctx.lineTo(103,76);
+							ctx.lineTo(170,15);
+							ctx.stroke();
+						  };
+						  img.src = url;
+						}
+			},
+				
+				
 		bindbuttons:function()
 			{
 				
@@ -176,7 +193,7 @@ var facepull =
 						error:function(img, code, message) {
 							
 							alert('Error: '+message);
-							alert(img);
+							//alert(img);
 						}
 					});
 					
@@ -212,11 +229,12 @@ var facepull =
 		
 			var url='http://graph.facebook.com/'+id+'/picture?type=large';
 			
-			$('#photo').empty();
-			var $photo=$('#photo');
-			$photo.hide();
-			$photo.html('<img src ="'+url+'"></img>');
-			$photo.fadeIn();			
+			//$('#photo').empty();
+			//var $photo=$('#photo');
+			//$photo.hide();
+			//$photo.html('<img src ="'+url+'"></img>');
+			drawImage(url());
+			//$photo.fadeIn();			
 			$('#detectface').show();
 			$('#saveface').show();
 			
