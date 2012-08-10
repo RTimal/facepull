@@ -120,10 +120,9 @@ var facepull =
 						$thumbdiv.attr('id','thumbnail');
 						$thumbdiv.attr('data-id',friend.id);	
 						$url='http://graph.facebook.com/'+friend.id+'/?fields=picture&type=large';
-						$.getJSON($url,function(key,val)
+						$.getJSON($url,function(data)
 							{
-								alert(key);
-								alert(val);
+								alert(data.["picture"]);
 							}
 						)
 						$thumbdiv.html('<img src="http://graph.facebook.com/' + friend.id + '/picture" />');
