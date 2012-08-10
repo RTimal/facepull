@@ -168,13 +168,14 @@ var facepull =
 			{
 				$(function()
 				{
-						var coords = $('#largephoto').faceDetection({
+						var coords = $('#newphoto #largephoto').faceDetection({
 						complete:function() {
 							//after complete
 						},
 						error:function(img, code, message) {
 							
 							alert('Error: '+message);
+							alert(img);
 						}
 					});
 					
@@ -189,7 +190,7 @@ var facepull =
 								'height': 	coords[i].height	+'px'
 							}
 						})
-						.appendTo('#photo');
+						.appendTo('#newphoto');
 					}
 				return false;
 				});
