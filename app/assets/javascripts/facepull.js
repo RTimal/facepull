@@ -166,11 +166,50 @@ var facepull =
 		
 		$('#detectface').bind('click',function()
 			{
-			$(function() 
+				$(function()
 				{
-					coords = $('#largephoto').faceDetection();
-					alert(coords);
-				});  
+						var coords = $('#largephoto').faceDetection({
+						complete:function() {
+							$this.text('Done!');
+						},
+						error:function(img, code, message) {
+							$this.text('error!');
+							alert('Error: '+message);
+						}
+					});
+					
+					for (var i = 0; i < coords.length; i++) {
+						$('<div>', {
+							'class':'face',
+							'css': {
+								'position':	'absolute',
+								'left':		coords[i].positionX +'px',
+								'top':		coords[i].positionY +'px',
+								'width': 	coords[i].width		+'px',
+								'height': 	coords[i].height	+'px'
+							}
+						})
+						.appendTo('#content');
+					}
+				return false;
+				});
+						
+						
+			});
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
 			});
 		
 		$('#save').bind('click',function()
