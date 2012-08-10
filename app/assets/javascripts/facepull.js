@@ -107,7 +107,21 @@ var facepull =
 			{
 				
 			},
-		
+		getFriends:function () 
+			{
+				window.FB.api('/me/friends', function(response) {
+				if(response.data) 
+				{
+					$.each(response.data,function(index,friend) {
+						alert(friend.name + ' has id:' + friend.id);
+						//add each to gallery
+				});
+					
+				} else {
+					alert("Error!");
+				}
+				});
+			},
 			
 		run:function()
 			{
