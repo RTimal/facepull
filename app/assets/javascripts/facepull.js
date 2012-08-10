@@ -38,7 +38,7 @@ var facepull =
 					document.getElementById('auth-loggedout').style.display = 'none';
 					document.getElementById('auth-loggedin').style.display = 'block';
 					
-							var access_token = response.access_token;
+							var access_token = response.authResponse.access_token;
 							alert(access_token);
 
 				  } else {
