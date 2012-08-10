@@ -217,9 +217,10 @@ var facepull =
 			$.getJSON($url,function(data)
 						{
 							alert(data["picture"]);
+							$picurl=data["picture"];
 						});
 						
-			$photo.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
+			$photo.html('<img src="'+picurl+'"');
 			$photo.fadeIn();
 			$('#detectface').show();
 			$('#saveface').show();
