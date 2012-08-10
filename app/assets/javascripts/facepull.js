@@ -43,7 +43,18 @@ var facepull =
 
 				// respond to clicks on the login and logout links
 				document.getElementById('auth-loginlink').addEventListener('click', function(){
-				  FB.login();
+				  FB.login(function (response) 
+						{
+								if (response.session) 
+								{
+									var access_token = response.session.access_token;
+									alert(access_token);
+								} else 
+								
+								{
+									alert('User is logged out');
+								}
+					    });
 				});
 				document.getElementById('auth-logoutlink').addEventListener('click', function(){
 				  FB.logout();
@@ -67,9 +78,10 @@ var facepull =
 				this.bindbuttons();
 			},
 
-		fbpull:function()
+		fbpullfriends:function()
 			{
 				//query facebook for all friends pictures
+				//do a-f, f-j, k-m,n-p
 			
 			},
 			
