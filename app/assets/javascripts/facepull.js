@@ -221,7 +221,7 @@ var facepull =
 							alert(data["picture"]);
 							var picurl=data["picture"];
 							alert(picurl);
-							$photo.html('<img src ="'+picurl+'"></img>');
+							$photo.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
 							$photo.fadeIn();
 						});
 						
