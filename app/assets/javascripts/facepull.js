@@ -119,7 +119,7 @@ var facepull =
 						$thumbdiv.empty();
 						$thumbdiv.attr('id','thumbnail');
 						$thumbdiv.attr('data-id',friend.id);	
-
+						
 						$thumbdiv.html('<img src="http://graph.facebook.com/' + friend.id + '/picture" />');
 						$('#thumbs').append($thumbdiv);
 				});
@@ -213,6 +213,12 @@ var facepull =
 			$('#photo').empty();
 			$photo= $('#photo');
 			$photo.hide();
+			$url='http://graph.facebook.com/'+id+'/?fields=picture&type=large';
+			$.getJSON($url,function(data)
+						{
+							alert(data["picture"]);
+						});
+						
 			$photo.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
 			$photo.fadeIn();
 			$('#detectface').show();
