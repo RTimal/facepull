@@ -118,7 +118,14 @@ var facepull =
 						var $thumbdiv=$(document.createElement('div'));
 						$thumbdiv.empty();
 						$thumbdiv.attr('id','thumbnail');
-						$thumbdiv.attr('data-id',friend.id);
+						$thumbdiv.attr('data-id',friend.id);	
+						$url='http://graph.facebook.com/'+friend.id+'/?fields=picture&type=large';
+						$.getJSON($url,function(key,val)
+							{
+								alert(key);
+								alert(val);
+							}
+						)
 						$thumbdiv.html('<img src="http://graph.facebook.com/' + friend.id + '/picture" />');
 						$('#thumbs').append($thumbdiv);
 				});
