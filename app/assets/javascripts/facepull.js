@@ -115,6 +115,7 @@ var facepull =
 					$.each(response.data,function(index,friend) {
 						alert(friend.name + ' has id:' + friend.id);
 						var $thumbdiv=$(document.createElement('div'));
+						$thumbdiv.attr('id','thumbnail');
 						$thumbdiv.html(friend.id+"	");
 						$('#gallery').append($thumbdiv);
 				});
