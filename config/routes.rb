@@ -1,4 +1,10 @@
 Facepull::Application.routes.draw do
+  get "site/gallery"
+
+  get "site/login"
+
+  get "site/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
