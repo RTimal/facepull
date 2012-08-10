@@ -198,20 +198,6 @@ var facepull =
 			});
 
 
-
-
-
-
-
-
-
-
-
-
-
-			
-			});
-		
 		$('#save').bind('click',function()
 			{
 			
