@@ -170,10 +170,10 @@ var facepull =
 				{
 						var coords = $('#largephoto').faceDetection({
 						complete:function() {
-							$this.text('Done!');
+							//after complete
 						},
 						error:function(img, code, message) {
-							$this.text('error!');
+							
 							alert('Error: '+message);
 						}
 					});
@@ -189,7 +189,7 @@ var facepull =
 								'height': 	coords[i].height	+'px'
 							}
 						})
-						.appendTo('#content');
+						.appendTo('#photo
 					}
 				return false;
 				});
