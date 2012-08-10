@@ -29,6 +29,7 @@ height:50%;
 width:50%;
 border:1px solid red;
 float:left;
+padding:0px;
 overflow:scroll;
 }
 
@@ -51,7 +52,7 @@ float:left;
 border:1px solid red;
 margin-top:5%;
 margin-left:5%;
-padding:5px;
+padding:0px;
 }
 
 .titlebar{
@@ -69,7 +70,6 @@ padding-top:10px;
 
 #photo{
 border-bottom:1px solid red;
-margin-bottom:5px;
 }
 
 #thumbnail{
@@ -77,6 +77,9 @@ float:left;
 padding:10px;
 }
 
+.photobutton{
+margin:3px;
+}
 
 
 #thumbnail:hover{

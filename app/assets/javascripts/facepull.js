@@ -166,8 +166,11 @@ var facepull =
 		
 		$('#detectface').bind('click',function()
 			{
-					var coords = $('#photo').faceDetection();
+			$(function() 
+				{
+					var coords = $('#myPicture').faceDetection();
 					console.log(coords);    
+				});  
 			});
 		
 		$('#save').bind('click',function()
