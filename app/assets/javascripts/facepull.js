@@ -116,7 +116,7 @@ var facepull =
 				imageElement.src=myImageSrc;
 					
 				var canvas2 = document.getElementById("canvas2");
-				var ctx2=.canvas2.getContext('2d');
+				var ctx2=canvas2.getContext('2d');
 				ctx2.drawImage(canvas1, 0, 0);
 				var myImageSrc = canvas2.toDataURL("image/png");
 				alert(myImageSrc);
