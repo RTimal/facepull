@@ -163,8 +163,7 @@ var facepull =
 			//get thumbnail id
 			var id=$(this).attr('data-id');
 			$('#photo').empty();
-			$newPhoto=$('div');
-			$newPhoto.hide();
+			$newPhoto= $(document.createElementById('div'));
 			$newPhoto.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
 			$('#photo').append($newphoto);
 			$newPhoto.fadeIn();
