@@ -210,15 +210,15 @@ var facepull =
 		$('#gallery').delegate('#thumbnail','click',function(){
 			//get thumbnail id
 			var id=$(this).attr('data-id');
-			$('#photo').empty();
-			$photo= $('#photo');
-			$photo.hide();
-			
+		
 			url='http://graph.facebook.com/'+id+'/?fields=picture&type=large';
 			var picurl="";
 			
 			$.getJSON(url,function(data)
 						{
+							$('#photo').empty();
+							$photo= $('#photo');
+							$photo.hide();
 							alert(data["picture"]);
 							picurl=data["picture"];
 							$photo.html('<img src="'+picurl+'"');
