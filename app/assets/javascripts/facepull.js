@@ -221,6 +221,7 @@ var facepull =
 							$photo.hide();
 							alert(data["picture"]);
 							picurl=data["picture"];
+							alert(picurl);
 							$photo.html('<img src="'+picurl+'"');
 							$photo.fadeIn();
 						});
