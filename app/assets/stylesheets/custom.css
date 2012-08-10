@@ -51,6 +51,7 @@ float:left;
 border:1px solid red;
 margin-top:5%;
 margin-left:5%;
+padding:5px;
 }
 
 .titlebar{
@@ -68,6 +69,7 @@ padding-top:10px;
 
 #photo{
 border-bottom:1px solid red;
+margin-bottom:5px;
 }
 
 #thumbnail{
