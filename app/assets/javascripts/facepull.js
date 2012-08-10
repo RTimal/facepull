@@ -103,7 +103,7 @@ var facepull =
 					});
 			},
 			drawImage:function(url){
-						function draw() 
+						function draw() {
 						  var ctx = document.getElementById('canvas').getContext('2d');
 						  var img = new Image();
 						  img.onload = function(){
@@ -116,6 +116,7 @@ var facepull =
 							ctx.stroke();
 						  };
 						  img.src = url;
+						}
 			},
 				
 				
