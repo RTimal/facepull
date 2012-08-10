@@ -3,6 +3,7 @@ var facepull =
 		currentLetter:"a",
 		currentSex:"M",
 		access_token:"",
+		FB:null,
 		_initfb:function()
 			{
 			 // Load the SDK Asynchronously
@@ -23,7 +24,8 @@ var facepull =
 				  cookie     : true, // enable cookies to allow the server to access the session
 				  xfbml      : true  // parse XFBML
 				});
-
+				
+				
 				// listen for and handle auth.statusChange events
 				FB.Event.subscribe('auth.statusChange', function(response) {
 				  if (response.authResponse) {
@@ -47,7 +49,7 @@ var facepull =
 							// and signed request each expire
 							var uid = response.authResponse.userID;
 							var accessToken = response.authResponse.accessToken;
-							alert(accessToken);
+							this.access_token = accessToken;
 						  } else if (response.status === 'not_authorized') {
 								alert("could not get access token, user is logged in but has no authenticated your app");
 						  } else 
@@ -71,13 +73,32 @@ var facepull =
 				});
 				document.getElementById('auth-logoutlink').addEventListener('click', function(){
 				  FB.logout();
+				  this.access_token="";
 				}); 
 			  } 
 			},
 			
-		f:function()
+		getNewAccessToken:function()
 			{
-			
+				window.FB.getLoginStatus(function(response) 
+					{
+						 if (response.status === 'connected') 
+						  {
+							// the user is logged in and has authenticated your
+							// app, and response.authResponse supplies
+							// the user's ID, a valid access token, a signed
+							// request, and the time the access token 
+							// and signed request each expire
+							var uid = response.authResponse.userID;
+							var accessToken = response.authResponse.accessToken;
+							this.access_token = accessToken;
+						  } else if (response.status === 'not_authorized') {
+								alert("could not get access token, user is logged in but has no authenticated your app");
+						  } else 
+						  {
+								alert("user isn't logged in");
+						  }
+					});
 			},
 			
 		bindbuttons:function()
@@ -112,3 +133,9 @@ var facepull =
 	}
 
 	facepull.run();
+	$(document).ready(function(){
+		$('#refresh').bind('click',function(){
+		alert("getting new access token");
+			facepull.getNewAccessToken();
+		});
+	});
