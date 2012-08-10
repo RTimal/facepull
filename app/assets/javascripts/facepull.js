@@ -169,7 +169,7 @@ var facepull =
 			$(function() 
 				{
 					var coords = $('#largephoto').faceDetection();
-					console.log(coords);    
+					alert(coords);
 				});  
 			});
 		
