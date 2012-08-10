@@ -168,7 +168,7 @@ var facepull =
 			{
 			$(function() 
 				{
-					var coords = $('#myPicture').faceDetection();
+					var coords = $('#newphoto').faceDetection();
 					console.log(coords);    
 				});  
 			});
@@ -185,6 +185,7 @@ var facepull =
 			$('#photo').empty();
 			$newPhoto= $(document.createElement('div'));
 			$newPhoto.hide();
+			$newPhoto.attr('id','newphoto');
 			$newPhoto.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
 			$('#photo').append($newPhoto);
 			$newPhoto.fadeIn();
