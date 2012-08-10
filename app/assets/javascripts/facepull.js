@@ -113,13 +113,13 @@ var facepull =
 				if(response.data) 
 				{
 					$.each(response.data,function(index,friend) {
-						alert(friend.name + ' has id:' + friend.id);
+						//alert(friend.name + ' has id:' + friend.id);
 						var $thumbdiv=$(document.createElement('div'));
 						$thumbdiv.empty();
 						$thumbdiv.attr('id','thumbnail');
 						$thumbdiv.attr('data-id',friend.id);
 						$thumbdiv.html('<img src="http://graph.facebook.com/' + friend.id + '/picture" />');
-						$('#gallery').append($thumbdiv);
+						$('#thumbs').append($thumbdiv);
 				});
 					
 				} else {

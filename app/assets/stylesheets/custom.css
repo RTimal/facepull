@@ -70,6 +70,13 @@ border-bottom:1px solid red;
 float:left;
 padding:10px;
 }
+
+
+
+#thumbnail:hover{
+cursor:pointer;
+}
+
 a{
 
 color:white;
