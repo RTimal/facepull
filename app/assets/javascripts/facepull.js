@@ -2,7 +2,7 @@ var facepull =
 	{
 		currentletter:"a",
 		currentsex:"M",
-		init:function()
+		_initfb:function()
 			{
 			 // Load the SDK Asynchronously
 			  (function(d){
@@ -53,14 +53,23 @@ var facepull =
 			
 		fbconnect:function()
 			{
-			//connect to facebook
 			
 			},
 			
+		bindbuttons:function()
+			{
+				
+			},
+			
+		run:function()
+			{
+				this._initfb();
+				this.bindbuttons();
+			},
+
 		fbpull:function()
 			{
-			//quertfacebook api,
-			//callback responsehandler
+				//query facebook for all friends pictures
 			
 			},
 			
@@ -76,5 +85,4 @@ var facepull =
 			}
 	}
 
-	facepull.init();
-	document.write(facepull.currentletter);
+	facepull.run();
