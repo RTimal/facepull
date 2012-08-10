@@ -150,6 +150,7 @@ var facepull =
 	$(document).ready(function(){
 		facepull.run();
 		$('#refresh').bind('click',function(){
-			facepull.getNewAccessToken();
+			//facepull.getNewAccessToken();
+			facepull.getFriends();
 		});
 	});
