@@ -92,6 +92,7 @@ var facepull =
 							var uid = response.authResponse.userID;
 							var accessToken = response.authResponse.accessToken;
 							this.access_token = accessToken;
+							alert(accessToken);
 						  } else if (response.status === 'not_authorized') {
 								alert("could not get access token, user is logged in but has no authenticated your app");
 						  } else 
