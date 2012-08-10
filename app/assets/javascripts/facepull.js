@@ -208,20 +208,7 @@ var facepull =
 		
 		$('#gallery').delegate('#thumbnail','click',function(){
 			//get thumbnail id
-			var id=$(this).attr('data-id');
 		
-			url='http://graph.facebook.com/'+id+'/picture?type=large';
-			
-							$('#photo').empty();
-							$photo= $('#photo');
-							$photo.hide();
-							
-							$photo.html('<img src ="'+url+'"></img>');
-							$photo.fadeIn();
-						
-						
-			$('#detectface').show();
-			$('#saveface').show();
 			//put id into link
 			//show link in #photo, hide,
 			//fadein
