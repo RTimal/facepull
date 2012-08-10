@@ -133,12 +133,85 @@ var facepull =
 			{
 				this._initfb();
 				this.bindbuttons();
+				this.bindAll();
 			},
 
-		fbpullfriends:function()
+		bindAll:function()
 			{
-				//query facebook for all friends pictures
-				//do a-f, f-j, k-m,n-p
+				$(document).ready(function()
+				{
+					facepull.run();
+					//$('#detectface').hide();
+					$('#saveface').hide();
+					$('#refresh').bind('click',function(){
+						//facepull.getNewAccessToken();
+						facepull.getFriends();
+					});
+		
+				$('#detectface').bind('click',function()
+					{
+						$(function()
+						{
+								var coords = $('#photo img').faceDetection({
+								complete:function() {
+									//after complete
+									alert("done");
+								},
+								error:function(img, code, message) {
+									
+									alert('Error: '+message);
+									alert(img);
+								}
+							});
+							
+							for (var i = 0; i < coords.length; i++) {
+								$('<div>', {
+									'class':'face',
+									'css': {
+										'position':	'absolute',
+										'left':		coords[i].positionX +'px',
+										'top':		coords[i].positionY +'px',
+										'width': 	coords[i].width		+'px',
+										'height': 	coords[i].height	+'px'
+									}
+								})
+								.appendTo('#photo');
+							}
+						return false;
+						});	
+					});
+
+
+							$('#save').bind('click',function()
+								{
+								
+									
+								});
+		
+						$('#gallery').delegate('#thumbnail','click',function(){
+							//get thumbnail id
+								var id=$(this).attr('data-id');
+						
+							var url='http://graph.facebook.com/'+id+'/picture?type=large';
+							
+							$('#photo').empty();
+							var $photo=$('#photo');
+							$photo.hide();
+							$photo.html('<img src ="'+url+'"></img>');
+							$photo.fadeIn();			
+							$('#detectface').show();
+							$('#saveface').show();
+							
+							//put id into link
+							//show link in #photo, hide,
+							//fadein
+						});
+					
+
+		
+		
+				});
+
 			
 			},
 			
@@ -153,79 +226,5 @@ var facepull =
 			
 			}
 	}
-	$(document).ready(function(){
-		facepull.run();
-		
-		
-		//$('#detectface').hide();
-		$('#saveface').hide();
-		$('#refresh').bind('click',function(){
-			//facepull.getNewAccessToken();
-			facepull.getFriends();
-		});
-		
-		$('#detectface').bind('click',function()
-			{
-				$(function()
-				{
-						var coords = $('#photo img').faceDetection({
-						complete:function() {
-							//after complete
-							alert("done");
-						},
-						error:function(img, code, message) {
-							
-							alert('Error: '+message);
-							alert(img);
-						}
-					});
-					
-					for (var i = 0; i < coords.length; i++) {
-						$('<div>', {
-							'class':'face',
-							'css': {
-								'position':	'absolute',
-								'left':		coords[i].positionX +'px',
-								'top':		coords[i].positionY +'px',
-								'width': 	coords[i].width		+'px',
-								'height': 	coords[i].height	+'px'
-							}
-						})
-						.appendTo('#photo');
-					}
-				return false;
-				});
-						
-						
-			});
-
-
-		$('#save').bind('click',function()
-			{
-			
-				
-			});
-		
-		$('#gallery').delegate('#thumbnail','click',function(){
-			//get thumbnail id
-				var id=$(this).attr('data-id');
-		
-			var url='http://graph.facebook.com/'+id+'/picture?type=large';
-			
-			$('#photo').empty();
-			var $photo=$('#photo');
-			$photo.hide();
-			$photo.html('<img src ="'+url+'"></img>');
-			$photo.fadeIn();			
-			$('#detectface').show();
-			$('#saveface').show();
-			
-			//put id into link
-			//show link in #photo, hide,
-			//fadein
-		});
 	
-
-		
-		
-	});
+	facepull.run();
