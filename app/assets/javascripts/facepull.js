@@ -213,8 +213,11 @@ var facepull =
 			$('#photo').empty();
 			$photo= $('#photo');
 			$photo.hide();
-			$url='http://graph.facebook.com/'+id+'/?fields=picture&type=large';
-			$.getJSON($url,function(data)
+			
+			url='http://graph.facebook.com/'+id+'/?fields=picture&type=large';
+			var picurl="";
+			
+			$.getJSON(url,function(data)
 						{
 							alert(data["picture"]);
 							picurl=data["picture"];
