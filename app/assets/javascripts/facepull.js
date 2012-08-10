@@ -220,9 +220,9 @@ var facepull =
 							$photo= $('#photo');
 							$photo.hide();
 							alert(data["picture"]);
-							picurl=data["picture"];
+							var picurl=data["picture"];
 							alert(picurl);
-							$photo.html('<img src="'+picurl+'"');
+							$photo.html('asgasgag');
 							$photo.fadeIn();
 						});
 						
