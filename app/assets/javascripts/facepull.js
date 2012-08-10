@@ -222,7 +222,7 @@ var facepull =
 							alert(data["picture"]);
 							var picurl=data["picture"];
 							alert(picurl);
-							//$photo.html('<img src ="''"');
+							$photo.html('<img src ="'+picurl+'">');
 							$photo.fadeIn();
 						});
 						
