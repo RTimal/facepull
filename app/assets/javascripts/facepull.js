@@ -115,9 +115,10 @@ var facepull =
 					$.each(response.data,function(index,friend) {
 						alert(friend.name + ' has id:' + friend.id);
 						var $thumbdiv=$(document.createElement('div'));
+						$thumbdiv.empty();
 						$thumbdiv.attr('id','thumbnail');
+						$thumbdiv.attr('data-id',friend.id);
 						$thumbdiv.html('<img src="http://graph.facebook.com/' + friend.id + '/picture" />');
-						//$thumbdiv.html(friend.id+"	");
 						$('#gallery').append($thumbdiv);
 				});
 					
@@ -157,4 +158,20 @@ var facepull =
 			//facepull.getNewAccessToken();
 			facepull.getFriends();
 		});
+		
+		$('#gallery').delegate('#thumbnail','hover',function(){
+			//get thumbnail id
+			var id=$(this).attr('data-id');
+			$('#photo').empty();
+			$newPhoto=$('div');
+			$newPhoto.hide();
+			$newPhoto.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
+			$('#photo').append($newphoto);
+			$newPhoto.fadeIn();
+			//put id into link
+			//show link in #photo, hide,
+			//fadein
+		});
+	
+	
 	});
