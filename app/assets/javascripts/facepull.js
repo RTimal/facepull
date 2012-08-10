@@ -35,7 +35,7 @@ var facepull =
 					})
 					document.getElementById('auth-loggedout').style.display = 'none';
 					document.getElementById('auth-loggedin').style.display = 'block';
-
+					this.fbCheckLogin(FB);
 				  } else {
 					// user has not auth'd your app, or is not logged into Facebook
 					document.getElementById('auth-loggedout').style.display = 'block';
@@ -45,9 +45,6 @@ var facepull =
 
 				// respond to clicks on the login and logout links
 				document.getElementById('auth-loginlink').addEventListener('click', function(){
-				  FB.login(function (response) 
-						{
-					    });
 				});
 				document.getElementById('auth-logoutlink').addEventListener('click', function(){
 				  FB.logout();
@@ -55,7 +52,7 @@ var facepull =
 			  } 
 			},
 			
-		fbCheckLogin:function()
+		fbCheckLogin:function(FB)
 			{
 				FB.getLoginStatus(function(response) 
 				{
