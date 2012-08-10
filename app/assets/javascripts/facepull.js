@@ -210,7 +210,7 @@ var facepull =
 			//get thumbnail id
 			var id=$(this).attr('data-id');
 		
-			url='http://graph.facebook.com/'+id+'/?fields=picture&type=large';
+			url='http://graph.facebook.com/'+id+'?fields=picture&type=large';
 			var picurl="";
 			
 			$.getJSON(url,function(data)
