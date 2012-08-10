@@ -157,7 +157,7 @@ var facepull =
 		facepull.run();
 		
 		
-		$('#detectface').hide();
+		//$('#detectface').hide();
 		$('#saveface').hide();
 		$('#refresh').bind('click',function(){
 			//facepull.getNewAccessToken();
@@ -168,9 +168,10 @@ var facepull =
 			{
 				$(function()
 				{
-						var coords = $('img').faceDetection({
+						var coords = $('#photo img').faceDetection({
 						complete:function() {
 							//after complete
+							alert("done");
 						},
 						error:function(img, code, message) {
 							
@@ -190,7 +191,7 @@ var facepull =
 								'height': 	coords[i].height	+'px'
 							}
 						})
-						.appendTo('#newphoto');
+						.appendTo('#photo');
 					}
 				return false;
 				});
@@ -209,12 +210,10 @@ var facepull =
 			//get thumbnail id
 			var id=$(this).attr('data-id');
 			$('#photo').empty();
-			$newPhoto= $(document.createElement('div'));
-			$newPhoto.hide();
-			$newPhoto.attr('id','newphoto');
-			$newPhoto.html('<img id = "largephoto" src="http://graph.facebook.com/' + id + '/picture?type=large" />');
-			$('#photo').append($newPhoto);
-			$newPhoto.fadeIn();
+			$photo= $('#photo');
+			$photo.hide();
+			$photo.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
+			$photo.fadeIn();
 			$('#detectface').show();
 			$('#saveface').show();
 			//put id into link
