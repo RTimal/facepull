@@ -208,31 +208,16 @@ var facepull =
 		
 		$('#gallery').delegate('#thumbnail','click',function(){
 			//get thumbnail id
+			$('#detectface').hide();
+			$('#saveface').hide();
 			var id=$(this).attr('data-id');
-		
-			url='http://graph.facebook.com/'+id+'?fields=picture&type=large';
-			var picurl="";
-			
-			$.getJSON(url,function(data)
-						{
-							$('#photo').empty();
-							$photo= $('#photo');
-							$photo.hide();
-							alert(data["picture"]);
-							var picurl=data["picture"];
-							alert(picurl);
-							$photo.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
-							$photo.fadeIn();
-						});
-						
+			$('#photo').empty();
+			$photo= $('#photo');
+			$photo.hide();
+			$photo.html('<img src="http://graph.facebook.com/' + id + '/picture?type=large" />');
 			$('#detectface').show();
 			$('#saveface').show();
 			//put id into link
 			//show link in #photo, hide,
 			//fadein
-		});
-	
-
-		
-		
 	});
