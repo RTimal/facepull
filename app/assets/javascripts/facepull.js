@@ -77,3 +77,4 @@ var facepull =
 	}
 
 	facepull.init();
+	document.write(facepull.currentletter);
