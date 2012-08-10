@@ -114,7 +114,9 @@ var facepull =
 				{
 					$.each(response.data,function(index,friend) {
 						alert(friend.name + ' has id:' + friend.id);
-						//add each to gallery
+						var $thumbdiv=$(document.createElement('div'));
+						$thumbdiv.html(friend.id+"	");
+						$('#gallery').append($thumbdiv);
 				});
 					
 				} else {
@@ -127,13 +129,6 @@ var facepull =
 			{
 				this._initfb();
 				this.bindbuttons();
-			},
-
-		fbpullfriends:function()
-			{
-				//query facebook for all friends pictures
-				//do a-f, f-j, k-m,n-p
-			
 			},
 			
 		_responsehandler:function()

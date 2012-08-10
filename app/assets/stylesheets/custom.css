@@ -28,7 +28,8 @@ position:relative;
 height:50%;
 width:50%;
 border:1px solid red;
-float:left
+float:left;
+overflow:scroll;
 }
 
 .leftfloatbutton{
@@ -68,6 +69,11 @@ height:70%;
 border-bottom:1px solid red;
 }
 
+#thumbnail{
+float:left;
+padding:10px;
+}
 a{
+
 color:white;
 }
