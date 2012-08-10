@@ -116,7 +116,8 @@ var facepull =
 						alert(friend.name + ' has id:' + friend.id);
 						var $thumbdiv=$(document.createElement('div'));
 						$thumbdiv.attr('id','thumbnail');
-						$thumbdiv.html(friend.id+"	");
+						$thumbdiv.html('<img src="http://graph.facebook.com/' + friend.id + '/picture" />');
+						//$thumbdiv.html(friend.id+"	");
 						$('#gallery').append($thumbdiv);
 				});
 					
