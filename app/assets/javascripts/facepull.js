@@ -103,7 +103,7 @@ var facepull =
 					});
 			},
 			drawImage:function(url){
-						function draw() {
+						function draw() 
 						  var ctx = document.getElementById('canvas').getContext('2d');
 						  var img = new Image();
 						  img.onload = function(){
@@ -116,7 +116,6 @@ var facepull =
 							ctx.stroke();
 						  };
 						  img.src = url;
-						}
 			},
 				
 				
@@ -233,7 +232,7 @@ var facepull =
 			//var $photo=$('#photo');
 			//$photo.hide();
 			//$photo.html('<img src ="'+url+'"></img>');
-			drawImage(url());
+			facepull.drawImage(url);
 			//$photo.fadeIn();			
 			$('#detectface').show();
 			$('#saveface').show();
