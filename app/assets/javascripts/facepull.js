@@ -102,28 +102,7 @@ var facepull =
 						  }
 					});
 			},
-			drawImage:function(url){
-				var ctx = document.getElementById('canvas').getContext('2d');
-				ctx.clearRect(0, 0, canvas.width, canvas.height);
-				var img = new Image();
-				img.onload = function()
-				{
-					ctx.drawImage(img,0,0);
-				};
-				img.src = url;
-				var canvas1 = document.getElementById("canvas");
-				var imageElement = document.getElementById("mypic");
-					
-				var canvas2 = document.getElementById("canvas2");
-				var ctx2=canvas2.getContext('2d');
-				ctx2.drawImage(canvas1, 0, 0);
-				var myImageSrc = canvas2.toDataURL("image/png");
-				alert(myImageSrc);
-				imageElement.src=myImageSrc;
-		
-			},
-				
-				
+			
 		bindbuttons:function()
 			{
 				
@@ -189,7 +168,7 @@ var facepull =
 			{
 				$(function()
 				{
-						var coords = $('#mypic').faceDetection({
+						var coords = $('#photo img').faceDetection({
 						complete:function() {
 							//after complete
 							alert("done");
@@ -197,7 +176,7 @@ var facepull =
 						error:function(img, code, message) {
 							
 							alert('Error: '+message);
-							//alert(img);
+							alert(img);
 						}
 					});
 					
@@ -233,12 +212,11 @@ var facepull =
 		
 			var url='http://graph.facebook.com/'+id+'/picture?type=large';
 			
-			//$('#photo').empty();
-			//var $photo=$('#photo');
-			//$photo.hide();
-			//$photo.html('<img src ="'+url+'"></img>');
-			facepull.drawImage(url);
-			//$photo.fadeIn();			
+			$('#photo').empty();
+			var $photo=$('#photo');
+			$photo.hide();
+			$photo.html('<img src ="'+url+'"></img>');
+			$photo.fadeIn();			
 			$('#detectface').show();
 			$('#saveface').show();
 			
