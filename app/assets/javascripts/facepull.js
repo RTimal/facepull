@@ -104,6 +104,7 @@ var facepull =
 			},
 			drawImage:function(url){
 						  var ctx = document.getElementById('canvas').getContext('2d');
+						  ctx.clearRect(0, 0, canvas.width, canvas.height);
 						  var img = new Image();
 						  img.onload = function(){
 							ctx.drawImage(img,0,0);
@@ -183,7 +184,7 @@ var facepull =
 			{
 				$(function()
 				{
-						var coords = $('#photo img').faceDetection({
+						var coords = $('#canvas').faceDetection({
 						complete:function() {
 							//after complete
 							alert("done");
@@ -206,7 +207,7 @@ var facepull =
 								'height': 	coords[i].height	+'px'
 							}
 						})
-						.appendTo('#photo');
+						.appendTo('#canvas');
 					}
 				return false;
 				});
