@@ -109,16 +109,18 @@ var facepull =
 			},
 		getFriends:function () 
 			{
-				window.FB.api('/me/friends', function(response) {
+								window.FB.api('/me/friends', function(response) {
 				if(response.data) 
 				{
 					$.each(response.data,function(index,friend) {
 						alert(friend.name + ' has id:' + friend.id);
-						//add each to gallery
+						var $thumbdiv=$(document.createElement('div'));
+						$thumbdiv.html(friend.id+"	");
+						$('#gallery').append($thumbdiv);
 				});
 					
 				} else {
-					alert("Error!");
+					alert("Please login with facebook first to refresh pictures");
 				}
 				});
 			},
