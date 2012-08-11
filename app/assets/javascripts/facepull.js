@@ -236,7 +236,7 @@ var facepull =
 							alert(data);
 							$photo.hide();
 							$('#photo img').attr('src',' ');
-							$('#photo img').attr('src','data:image/jpg;base64'+data);				
+							$('#photo img').attr('src','data:image/jpg;base64,'+data);				
 							$photo.fadeIn();
 						}
 					}
