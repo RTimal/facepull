@@ -7,12 +7,11 @@ class PictureController < ApplicationController
 
   def getandsave
 	  uri=URI.parse(params[:picurl])
-	  #location=Net::HTTP.get_response(uri)['location']
-	  File.open('public/images/upload/faceimage.gif', 'wb') do |fo|
+	  File.open('app/assets/images/faceimage.gif', 'wb') do |fo|
 			fo.write open(params[:picurl]).read
 	   end
 
-	  render :text => location
+	  render :text => "uri"
 	end
 	
 end
