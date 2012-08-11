@@ -213,7 +213,7 @@ var facepull =
 						dataType:'text',
 						data:{picurl:url},
 						type:'GET',
-						success:function(response){alert(response);}
+						success:function(response){console.log(response);}
 					}
 				);
 				
@@ -225,7 +225,7 @@ var facepull =
 			var url='http://graph.facebook.com/'+id+'/picture?type=large';
 			var urlsite = '/picture/getandsave';
 			$.ajax
-				(	
+				(	 
 					{
 						url:urlsite,
 						dataType:'text',
@@ -236,7 +236,7 @@ var facepull =
 							alert(data);
 							$photo.hide();
 							$('#photo img').attr('src',' ');
-							$('#photo img').attr('src',data);					
+							$('#photo img').attr('src','data:image/jpg;base64'+data);				
 							$photo.fadeIn();
 						}
 					}
