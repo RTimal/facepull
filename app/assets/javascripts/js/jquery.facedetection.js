@@ -61,12 +61,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		}
 
 		function detect() {		
-			//try {
+			try {
 				var coords = ccv.detect_objects(grayscale( $$.get(0)), cascade, 5, 1);
-			//} catch(e) {
-			//	options.error($$, 2, 'This image is not valid');
-			//	return [];
-			//}
+			} catch(e) {
+				options.error($$, 2, 'This image is not valid');
+				return [];
+			}
 			
 			var positionX 	= $$.position().left;
 			var positionY 	= $$.position().top;	
