@@ -233,8 +233,10 @@ var facepull =
 						type:'GET',
 						success:function(data){
 							var $photo=$('#photo');
-							alert(data);
+							//alert(data);
 							$photo.hide();
+							photo.empty();
+							$photo.append($('img'));
 							$('#photo img').attr('src',' ');
 							$('#photo img').attr('src','data:image/jpg;base64,'+data);				
 							$photo.fadeIn();

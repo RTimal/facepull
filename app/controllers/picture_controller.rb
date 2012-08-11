@@ -12,7 +12,7 @@ class PictureController < ApplicationController
 	  
 	  File.open('app/assets/images/faceimage.gif', 'wb') do |fo|
 			fo.write open(location).read
-			send_data(Base64.strict_encode64(open(location).read) , :filename => 'faceimage.jpg', :type=>'image/gif')
+			send_data(Base64.strict_encode64(open(location).read) , :type=>'image/jpg')
 	   end
 
 	  #render :text => location
