@@ -238,7 +238,7 @@ var facepull =
 			//$('#photo').empty();
 			var $photo=$('#photo');
 			$('#photo img').attr('src',' ');
-			$('#photo img').attr('src','/assets/faceimage.jpg');
+			$('#photo img').attr('src','/assets/faceimage');
 			$photo.hide();
 			$photo.fadeIn();
 			$('#detectface').show();

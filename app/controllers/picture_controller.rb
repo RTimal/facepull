@@ -11,7 +11,7 @@ class PictureController < ApplicationController
 			fo.write open(params[:picurl]).read
 	   end
 
-	  render :text => "asfasfa"
+	  render :text => uri.path
 	end
 	
 end
