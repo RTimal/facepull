@@ -7,7 +7,7 @@ class PictureController < ApplicationController
 
   def getandsave
 	  uri=URI.parse(params[:picurl])
-	  File.open('app/assets/images/faceimage', 'wb') do |fo|
+	  File.open('app/assets/images/faceimage.gif', 'wb') do |fo|
 			fo.write open(params[:picurl]).read
 	   end
 
