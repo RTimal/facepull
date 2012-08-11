@@ -236,6 +236,7 @@ var facepull =
 							//alert(data);
 							$photo.hide();
 							$photo.empty();
+							$('.face').remove();
 							$photo.append(document.createElement('img');
 							$('#photo img').attr('src',' ');
 							$('#photo img').attr('src','data:image/jpg;base64,'+data);				
