@@ -201,24 +201,46 @@ var facepull =
 
 
 		$('#save').bind('click',function()
-			{
-			
+			{	
+				var data1 = "";
+				var urlsite = '/picture/getandsave';
+				var id = 1;
+				var url='http://graph.facebook.com/'+id+'/picture?type=large';
+				$.ajax
+				(	
+					{
+						url:urlsite,
+						dataType:'text',
+						data:{picurl:url},
+						type:'GET',
+						success:function(response){alert(response);}
+					}
+				);
 				
 			});
 		
 		$('#gallery').delegate('#thumbnail','click',function(){
 			//get thumbnail id
-				var id=$(this).attr('data-id');
-		
+			var id=$(this).attr('data-id');
 			var url='http://graph.facebook.com/'+id+'/picture?type=large';
+			var urlsite = '/picture/getandsave';
+			$.ajax
+				(	
+					{
+						url:urlsite,
+						dataType:'text',
+						data:{picurl:url},
+						type:'GET',
+						success:function(data){alert(data);}
+					}
+				);
 			
-			$('#photo').empty();
+			//$('#photo').empty();
 			var $photo=$('#photo');
+			$('#photo img').attr('src',' ');
+			$('#photo img').attr('src','/assets/faceimage.jpg');
 			$photo.hide();
-			$photo.html('<img src ="'+url+'"></img>');
 			$photo.fadeIn();
-						
-						
 			$('#detectface').show();
 			$('#saveface').show();
 			
@@ -226,8 +248,5 @@ var facepull =
 			//show link in #photo, hide,
 			//fadein
 		});
-	
-
-		
 		
 	});

@@ -1,4 +1,6 @@
 Facepull::Application.routes.draw do
+  get "picture/getandsave"
+
   get "site/gallery"
 
   get "site/login"
