@@ -235,8 +235,8 @@ var facepull =
 							var $photo=$('#photo');
 							//alert(data);
 							$photo.hide();
-							//$photo.empty();
-							//$photo.append($('img'));
+							$photo.empty();
+							$photo.append(document.createElement('img');
 							$('#photo img').attr('src',' ');
 							$('#photo img').attr('src','data:image/jpg;base64,'+data);				
 							$photo.fadeIn();
