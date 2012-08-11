@@ -38,7 +38,7 @@ var facepull =
 					})
 					document.getElementById('auth-loggedout').style.display = 'none';
 					document.getElementById('auth-loggedin').style.display = 'block';
-					
+					$('#refresh').trigger('click');
 					FB.getLoginStatus(function(response) 
 					{
 						 if (response.status === 'connected') 
