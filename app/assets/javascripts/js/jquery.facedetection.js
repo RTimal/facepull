@@ -63,7 +63,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			try {
 				var coords = ccv.detect_objects(grayscale( $$.get(0)), cascade, 5, 1);
 			} catch(e) {
-				options.error($$, 2, 'T');
+				options.error($$, 2, 'Couldnt find any faces, still working on it.');
 				return [];
 			}
 			

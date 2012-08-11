@@ -171,7 +171,7 @@ var facepull =
 						var coords = $('#photo img').faceDetection({
 						complete:function() {
 							//after complete
-							alert('Finished finding faces');
+							alert('Finished searching');
 						},
 						error:function(img, code, message) {
 							alert('Error: '+message);
