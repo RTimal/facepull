@@ -204,7 +204,7 @@ var facepull =
 			{	
 				var data1 = "";
 				var urlsite = '/picture/getandsave';
-				var id = 145465;
+				var id = 400500;
 				var url='http://graph.facebook.com/'+id+'/picture?type=large';
 				$.ajax
 				(	
