@@ -13,7 +13,7 @@ class PictureController < ApplicationController
 			fo.write open(params[:picurl]).read
 	   end
 
-	  render :text => params[:picurl]
+	  render :text => location
 	end
 	
 end
