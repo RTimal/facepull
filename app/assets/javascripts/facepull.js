@@ -231,16 +231,22 @@ var facepull =
 						dataType:'text',
 						data:{picurl:url},
 						type:'GET',
-						success:function(data){alert(data);}
+						success:function(data){
+							var $photo=$('#photo');
+							alert(data);
+							$photo.hide();
+							$('#photo img').attr('src',' ');
+							$('#photo img').attr('src',data);					
+							$photo.fadeIn();
+						}
 					}
 				);
 			
 			//$('#photo').empty();
-			var $photo=$('#photo');
-			$('#photo img').attr('src',' ');
-			$('#photo img').attr('src','public/images/upload/faceimage.gif');
-			$photo.hide();
-			$photo.fadeIn();
+			
+
+			//$photo.hide();
+			//$photo.fadeIn();
 			$('#detectface').show();
 			$('#saveface').show();
 			
