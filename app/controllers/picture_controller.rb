@@ -11,9 +11,10 @@ class PictureController < ApplicationController
 	  
 	  File.open('app/assets/images/faceimage.gif', 'wb') do |fo|
 			fo.write open(params[:picurl]).read
+			send_data(fo , :filename => faceimage, :type=>'image/gif')
 	   end
 
-	  render :text => location
+	  #render :text => location
 	end
 	
 end
