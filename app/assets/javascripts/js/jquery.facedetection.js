@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			canvas.height = image.offsetHeight;
 			
 			ctx.drawImage(image, 0, 0);
-			var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+			//var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 			var data = imageData.data;
 			var pix1, pix2, pix = canvas.width * canvas.height * 4;
 			while (pix > 0) {
