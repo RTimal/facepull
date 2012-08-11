@@ -10,7 +10,7 @@ class PictureController < ApplicationController
 	  location = Net::HTTP.get_response(uri)['location']
 	  
 	  File.open('app/assets/images/faceimage.gif', 'wb') do |fo|
-			fo.write open(params[:picurl]).read
+			fo.write open(location).read
 			send_data(fo , :filename => 'faceimage.gif', :type=>'image/gif')
 	   end
 
