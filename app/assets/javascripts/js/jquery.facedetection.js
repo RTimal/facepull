@@ -63,7 +63,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			try {
 				var coords = ccv.detect_objects(grayscale( $$.get(0)), cascade, 5, 1);
 			} catch(e) {
-				options.error($$, 2, 'This image is not valid');
+				options.error($$, 2, 'This image is not valid, Maybe it's too small,doesnt have the right lighting, or is rotated. Still working on it');
 				return [];
 			}
 			
