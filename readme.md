@@ -1,6 +1,5 @@
-facepull
-========
+Facebook image facial recognition
 
-facepull - facebook image facial recognition
+Technologies:
 
-demo can be seen at facepull.herokuapp.com
+Heroku, Ruby on Rails, Javascript, HTML, CSS
